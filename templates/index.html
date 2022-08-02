@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+
+{% block style %}
+<link rel="stylesheet" href="{{ url_for('static',filename='css/styleind.css' ) }}">
+{% endblock style %}
+  {% block body %}
+      <div class="bn">
+        <a href="{{url_for('map4x4',filename='index_4x4.html' ) }}" id='b1'>4x4</a>
+        <a id='b2' >3x2</a>
+        <a id='b3' >2x2</a>
+
+
+      </div>
+
+  {% endblock body %}

@@ -1,0 +1,499 @@
+{% extends "base.html" %}
+
+  {% block style %}
+  <link rel="stylesheet" href="{{ url_for('static',filename='css/stylemain.css' ) }}">
+  {% endblock style %}
+
+
+
+  {% block body %}
+  <form action="/" method="POST">
+
+
+    <div class="container" style="border-radius:2% ;">
+
+      <div class="row" style="background-color: #7BC6DF; padding:2%; border-radius: 10px;">   <!-- Code for Text Field Entering expression-->
+        <label  for="exampleFormControlInput1" class="form-label" style="color:rgb(15, 22, 65); font-size: x-large;">Enter Sum of Products Expression (Minterms)</label>
+        <input name="textfield" class="form-control form-control-lg" type="text" placeholder="Enter your KMAP expression here and click SUBMIT" >
+        
+      
+      </div>
+      <div class="row" style=" text-align:center;align-items: center;font-family: 'Permanent Marker', cursive;font-size: 60px;justify-content: center;color:rgb(250, 250, 250);"> <!--Code for OR in the middle of the page -->
+      OR
+      </div>
+      <div class="row">
+        <div  class="col-md-3" style="margin-top: 1%; background-color:#8ed8c9; padding-left: 2% ;border-radius: 15px; "> <!--4 Variable Input-->
+
+            <div class="row" style=" font-family: 'Edu NSW ACT Foundation', cursive;  font-size: 120%; color: #333; ">
+              <p style="font-size: 140%; margin: 0%; padding: 0%;"> Enter Your Variables Here </p> 
+              <p style="margin: 0%;padding: 0%;">( A B C D By Default)</p>
+
+            </div>
+
+            <div class="row">   <!--Start of the 1st row-->
+              <div class="col">
+                <div class="row">
+                  <div class="form-floating">
+                    <input  name="floating1" class="form-control"  id="floating1" placeholder="A"  value="A">
+                    <label name="floating1" style="font-size:100% ;" for="floating1">First Variable</label>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="row">
+                  <div class="form-floating">
+                    <input name="floating2" class="form-control" id="floating2" placeholder="B" value="B">
+                    <label name="floating2" style="font-size:80% ;" for="floating2">Second Variable</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="row">   <!--Start of the 2nd row-->
+              <div class="col">
+                <div class="row">
+                  <div class="form-floating">
+                    <input  name="floating3" class="form-control" id="floating3" placeholder="C" value="C">
+                    <label name="floating3" style="font-size:100% ;" for="floating3">Third Variable</label>
+                  </div>
+                </div>
+              </div>
+              <div class="col">
+                <div class="row">
+                  <div class="form-floating">
+                    <input name="floating4" class="form-control" id="floating4" placeholder="D" value="D">
+                    <label name="floating4" style="font-size:90% ;" for="floating4">Fourth Variable</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+
+
+
+        </div>
+        
+        <div class="col-md-5" style="padding-left:2%; margin-top: 1%;"><!-- Code for the 1s and 0s in the KMAP -->
+                <div class="row" style="padding-right: 14.35%   ;font-family: 'Edu NSW ACT Foundation', cursive;  font-size: 200%; background-color:#7BC6DF ; color: #333; border-top-left-radius: 15px; border-top-right-radius: 15px;">
+                  Make your Kmap Here!
+                </div>
+              <div class="row"> <!--0th ROW -->
+                  <div class="col" >
+                  <div class="row" style=" font-size: large; justify-content: center; background-color: rgb(123, 198, 223);">
+
+                      
+                      00
+                      
+          
+                  </div>
+                  </div>
+                  <div class="col" >
+                  <div class="row" style=" font-size: large; justify-content: center; background-color: rgb(123, 198, 223);">
+
+                      
+                       01
+                  
+      
+                  </div>
+                  </div>
+                  <div class="col">
+                  <div class="row" style="font-size: large; justify-content: center; background-color: rgb(123, 198, 223);">
+
+                      
+                      11
+                  
+      
+                  </div>
+                  </div>
+                  <div class="col">
+                  <div class="row" style=" font-size: large; justify-content: center; background-color: rgb(123, 198, 223);">
+                  10
+                  </div>
+                  </div>
+                </div>
+                <div class="row"> <!--1st ROW -->
+                    <div class="col" >
+                    <div class="row" style=" border-style:solid ;border-width: 20%; border-color: rgb(123, 198, 223);">
+
+                        
+                        <div class="col" style="padding:15%; padding-left:5%; padding-right: 5%;">
+                            <input type="radio" value=1 class="btn-check" name="1" id="success-outlined1" autocomplete="off" checked>
+                            <label style="font-size:20px; font-family: 'Quicksand', sans-serif; padding-top: 30%; padding-bottom: 30%; padding-right: 50%; padding-left: 50%;" class="btn btn-outline-primary" for="success-outlined1">1</label>
+                        </div>
+            
+            
+                        <div class="col"  style="padding:15%; padding-left:5%; padding-right: 18%;" >
+                            <input type="radio" value=0 class="btn-check" name="1" id="danger-outlined1" autocomplete="off">
+                            <label style="font-size:20px; font-family: 'Quicksand', sans-serif; padding-top: 30%; padding-bottom: 30%; padding-right: 50%; padding-left: 50%;" class="btn btn-outline-secondary" for="danger-outlined1">0</label>
+                        </div>
+                        
+            
+                    </div>
+                    </div>
+                    <div class="col" >
+                    <div class="row" style=" border-style:solid ;border-width: 20%; border-color: rgb(123, 198, 223);">
+
+                        
+                        <div class="col" style="  padding:15%; padding-left:5%; padding-right: 5%;">
+                        <input type="radio" value=1 class="btn-check" name="2" id="success-outlined2" autocomplete="off" checked>
+                        <label style="font-size:20px; font-family: 'Quicksand', sans-serif; padding-top: 30%; padding-bottom: 30%; padding-right: 50%; padding-left: 50%;" class="btn btn-outline-primary" for="success-outlined2">1</label>
+                        </div>
+            
+            
+                        <div class="col"  style="padding:15%; padding-left:5%; padding-right: 18%;" >
+                        <input type="radio"  value=0 class="btn-check" name="2" id="danger-outlined2" autocomplete="off">
+                        <label style="font-size:20px; font-family: 'Quicksand', sans-serif; padding-top: 30%; padding-bottom: 30%; padding-right: 50%; padding-left: 50%;" class="btn btn-outline-secondary" for="danger-outlined2">0</label>
+                        </div>
+                    
+        
+                    </div>
+                    </div>
+                    <div class="col">
+                    <div class="row" style=" border-style:solid ;border-width: 20%; border-color: rgb(123, 198, 223);">
+
+                        
+                        <div class="col" style="padding:15%; padding-left:5%; padding-right: 5%;">
+                        <input type="radio" value=1 class="btn-check" name="4" id="success-outlined4" autocomplete="off" checked>
+                        <label style="font-size:20px; font-family: 'Quicksand', sans-serif; padding-top: 30%; padding-bottom: 30%; padding-right: 50%; padding-left: 50%;" class="btn btn-outline-primary" for="success-outlined4">1</label>
+                        </div>
+            
+            
+                        <div class="col"  style="padding:15%; padding-left:5%; padding-right: 18%;" >
+                        <input type="radio"  value=0 class="btn-check" name="4" id="danger-outlined4" autocomplete="off">
+                        <label style="font-size:20px; font-family: 'Quicksand', sans-serif; padding-top: 30%; padding-bottom: 30%; padding-right: 50%; padding-left: 50%;" class="btn btn-outline-secondary" for="danger-outlined4">0</label>
+                        </div>
+                    
+        
+                    </div>
+                    </div>
+                    <div class="col">
+                    <div class="row" style=" border-style:solid ;border-width: 20%; border-color: rgb(123, 198, 223);">
+
+                        
+                        <div class="col" style="padding:15%; padding-left:5%; padding-right: 5%;">
+                        <input type="radio" value=1 class="btn-check" name="3" id="success-outlined3" autocomplete="off" checked>
+                        <label style="font-size:20px; font-family: 'Quicksand', sans-serif; padding-top: 30%; padding-bottom: 30%; padding-right: 50%; padding-left: 50%;" class="btn btn-outline-primary" for="success-outlined3">1</label>
+                        </div>
+            
+            
+                        <div class="col"  style="padding:15%; padding-left:5%; padding-right: 18%;" >
+                        <input type="radio" value=0 class="btn-check" name="3" id="danger-outlined3" autocomplete="off">
+                        <label style="font-size:20px; font-family: 'Quicksand', sans-serif; padding-top: 30%; padding-bottom: 30%; padding-right: 50%; padding-left: 50%;" class="btn btn-outline-secondary" for="danger-outlined3">0</label>
+                        </div>
+                    
+        
+                    </div>
+                    </div>
+                </div>
+                <div class="row"> <!--2nd ROW -->
+                    <div class="col" >
+                    <div class="row" style=" border-style:solid ;border-width: 20%; border-color: rgb(123, 198, 223);">
+
+                        
+                        <div class="col" style="padding:15%; padding-left:5%; padding-right: 5%;">
+                            <input type="radio" value=1 class="btn-check" name="5" id="success-outlined5" autocomplete="off" checked>
+                            <label style="font-size:20px; font-family: 'Quicksand', sans-serif; padding-top: 30%; padding-bottom: 30%; padding-right: 50%; padding-left: 50%;" class="btn btn-outline-primary" for="success-outlined5">1</label>
+                        </div>
+            
+            
+                        <div class="col"  style="padding:15%; padding-left:5%; padding-right: 18%;" >
+                            <input type="radio" value=0 class="btn-check" name="5" id="danger-outlined5" autocomplete="off">
+                            <label style="font-size:20px; font-family: 'Quicksand', sans-serif; padding-top: 30%; padding-bottom: 30%; padding-right: 50%; padding-left: 50%;" class="btn btn-outline-secondary" for="danger-outlined5">0</label>
+                        </div>
+                        
+            
+                    </div>
+                    </div>
+                    <div class="col" >
+                    <div class="row" style=" border-style:solid ;border-width: 20%; border-color: rgb(123, 198, 223);">
+
+                        
+                        <div class="col" style="  padding:15%; padding-left:5%; padding-right: 5%;">
+                        <input type="radio" value=1 class="btn-check" name="6" id="success-outlined6" autocomplete="off" checked>
+                        <label style="font-size:20px; font-family: 'Quicksand', sans-serif; padding-top: 30%; padding-bottom: 30%; padding-right: 50%; padding-left: 50%;" class="btn btn-outline-primary" for="success-outlined6">1</label>
+                        </div>
+            
+            
+                        <div class="col"  style="padding:15%; padding-left:5%; padding-right: 18%;" >
+                        <input type="radio" value=0 class="btn-check" name="6" id="danger-outlined6" autocomplete="off">
+                        <label style="font-size:20px; font-family: 'Quicksand', sans-serif; padding-top: 30%; padding-bottom: 30%; padding-right: 50%; padding-left: 50%;" class="btn btn-outline-secondary" for="danger-outlined6">0</label>
+                        </div>
+                    
+        
+                    </div>
+                    </div>
+                    <div class="col">
+                    <div class="row" style=" border-style:solid ;border-width: 20%; border-color: rgb(123, 198, 223);">
+
+                        
+                        <div class="col" style="padding:15%; padding-left:5%; padding-right: 5%;">
+                        <input type="radio" value=1 class="btn-check" name="8" id="success-outlined8" autocomplete="off" checked>
+                        <label style="font-size:20px; font-family: 'Quicksand', sans-serif; padding-top: 30%; padding-bottom: 30%; padding-right: 50%; padding-left: 50%;" class="btn btn-outline-primary" for="success-outlined8">1</label>
+                        </div>
+            
+            
+                        <div class="col"  style="padding:15%; padding-left:5%; padding-right: 18%;" >
+                        <input type="radio" value=0 class="btn-check" name="8" id="danger-outlined8" autocomplete="off">
+                        <label style="font-size:20px; font-family: 'Quicksand', sans-serif; padding-top: 30%; padding-bottom: 30%; padding-right: 50%; padding-left: 50%;" class="btn btn-outline-secondary" for="danger-outlined8">0</label>
+                        </div>
+                    
+        
+                    </div>
+                    </div>
+                    <div class="col">
+                    <div class="row" style=" border-style:solid ;border-width: 20%; border-color: rgb(123, 198, 223);">
+
+                        
+                        <div class="col" style="padding:15%; padding-left:5%; padding-right: 5%;">
+                        <input type="radio" value=1 class="btn-check" name="7" id="success-outlined7" autocomplete="off" checked>
+                        <label style="font-size:20px; font-family: 'Quicksand', sans-serif; padding-top: 30%; padding-bottom: 30%; padding-right: 50%; padding-left: 50%;" class="btn btn-outline-primary" for="success-outlined7">1</label>
+                        </div>
+            
+            
+                        <div class="col"  style="padding:15%; padding-left:5%; padding-right: 18%;" >
+                        <input type="radio" value=0 class="btn-check" name="7" id="danger-outlined7" autocomplete="off">
+                        <label style="font-size:20px; font-family: 'Quicksand', sans-serif; padding-top: 30%; padding-bottom: 30%; padding-right: 50%; padding-left: 50%;" class="btn btn-outline-secondary" for="danger-outlined7">0</label>
+                        </div>
+                    
+        
+                    </div>
+                    </div>
+                </div>
+                <div class="row"> <!--3rd ROW -->
+                    <div class="col" >
+                    <div class="row" style=" border-style:solid ;border-width: 20%; border-color: rgb(123, 198, 223);">
+
+                        
+                        <div class="col" style="padding:15%; padding-left:5%; padding-right: 5%;">
+                            <input type="radio" value=1 class="btn-check" name="13" id="success-outlined13" autocomplete="off" checked>
+                            <label style="font-size:20px; font-family: 'Quicksand', sans-serif; padding-top: 30%; padding-bottom: 30%; padding-right: 50%; padding-left: 50%;" class="btn btn-outline-primary" for="success-outlined13">1</label>
+                        </div>
+            
+            
+                        <div class="col"  style="padding:15%; padding-left:5%; padding-right: 18%;" >
+                            <input type="radio" value=0 class="btn-check" name="13" id="danger-outlined13" autocomplete="off">
+                            <label style="font-size:20px; font-family: 'Quicksand', sans-serif; padding-top: 30%; padding-bottom: 30%; padding-right: 50%; padding-left: 50%;" class="btn btn-outline-secondary" for="danger-outlined13">0</label>
+                        </div>
+                        
+            
+                    </div>
+                    </div>
+                    <div class="col" >
+                    <div class="row" style=" border-style:solid ;border-width: 20%; border-color: rgb(123, 198, 223);">
+
+                        
+                        <div class="col" style="  padding:15%; padding-left:5%; padding-right: 5%;">
+                        <input type="radio" value=1 class="btn-check" name="14" id="success-outlined14" autocomplete="off" checked>
+                        <label style="font-size:20px; font-family: 'Quicksand', sans-serif; padding-top: 30%; padding-bottom: 30%; padding-right: 50%; padding-left: 50%;" class="btn btn-outline-primary" for="success-outlined14">1</label>
+                        </div>
+            
+            
+                        <div class="col"  style="padding:15%; padding-left:5%; padding-right: 18%;" >
+                        <input type="radio" value=0 class="btn-check" name="14" id="danger-outlined14" autocomplete="off">
+                        <label style="font-size:20px; font-family: 'Quicksand', sans-serif; padding-top: 30%; padding-bottom: 30%; padding-right: 50%; padding-left: 50%;" class="btn btn-outline-secondary" for="danger-outlined14">0</label>
+                        </div>
+                    
+        
+                    </div>
+                    </div>
+                    <div class="col">
+                    <div class="row" style=" border-style:solid ;border-width: 20%; border-color: rgb(123, 198, 223);">
+
+                        
+                        <div class="col" style="padding:15%; padding-left:5%; padding-right: 5%;">
+                        <input type="radio" value=1 class="btn-check" name="16" id="success-outlined16" autocomplete="off" checked>
+                        <label style="font-size:20px; font-family: 'Quicksand', sans-serif; padding-top: 30%; padding-bottom: 30%; padding-right: 50%; padding-left: 50%;" class="btn btn-outline-primary" for="success-outlined16">1</label>
+                        </div>
+            
+            
+                        <div class="col"  style="padding:15%; padding-left:5%; padding-right: 18%;" >
+                        <input type="radio" value=0 class="btn-check" name="16" id="danger-outlined16" autocomplete="off">
+                        <label style="font-size:20px; font-family: 'Quicksand', sans-serif; padding-top: 30%; padding-bottom: 30%; padding-right: 50%; padding-left: 50%;" class="btn btn-outline-secondary" for="danger-outlined16">0</label>
+                        </div>
+                    
+        
+                    </div>
+                    </div>
+                    <div class="col">
+                    <div class="row" style=" border-style:solid ;border-width: 20%; border-color: rgb(123, 198, 223);">
+
+                        
+                        <div class="col" style="padding:15%; padding-left:5%; padding-right: 5%;">
+                        <input type="radio" value=1 class="btn-check" name="15" id="success-outlined15" autocomplete="off" checked>
+                        <label style="font-size:20px; font-family: 'Quicksand', sans-serif; padding-top: 30%; padding-bottom: 30%; padding-right: 50%; padding-left: 50%;" class="btn btn-outline-primary" for="success-outlined15">1</label>
+                        </div>
+            
+            
+                        <div class="col"  style="padding:15%; padding-left:5%; padding-right: 18%;" >
+                        <input type="radio" value=0 class="btn-check" name="15" id="danger-outlined15" autocomplete="off">
+                        <label style="font-size:20px; font-family: 'Quicksand', sans-serif; padding-top: 30%; padding-bottom: 30%; padding-right: 50%; padding-left: 50%;" class="btn btn-outline-secondary" for="danger-outlined15">0</label>
+                        </div>
+                    
+        
+                    </div>
+                    </div>
+                </div>
+                <div class="row"> <!--4th ROW -->
+                    <div class="col" >
+                    <div class="row" style=" border-style:solid ;border-width: 20%; border-color: rgb(123, 198, 223);">
+
+                        
+                        <div class="col" style="padding:15%; padding-left:5%; padding-right: 5%;">
+                            <input type="radio" value=1 class="btn-check" name="9" id="success-outlined9" autocomplete="off" checked>
+                            <label style="font-size:20px; font-family: 'Quicksand', sans-serif; padding-top: 30%; padding-bottom: 30%; padding-right: 50%; padding-left: 50%;" class="btn btn-outline-primary" for="success-outlined9">1</label>
+                        </div>
+            
+            
+                        <div class="col"  style="padding:15%; padding-left:5%; padding-right: 18%;" >
+                            <input type="radio" value=0 class="btn-check" name="9" id="danger-outlined9" autocomplete="off">
+                            <label style="font-size:20px; font-family: 'Quicksand', sans-serif; padding-top: 30%; padding-bottom: 30%; padding-right: 50%; padding-left: 50%;" class="btn btn-outline-secondary" for="danger-outlined9">0</label>
+                        </div>
+                        
+            
+                    </div>
+                    </div>
+                    <div class="col" >
+                    <div class="row" style=" border-style:solid ;border-width: 20%; border-color: rgb(123, 198, 223);">
+
+                        
+                        <div class="col" style="  padding:15%; padding-left:5%; padding-right: 5%;">
+                        <input type="radio" value=1 class="btn-check" name="10" id="success-outlined10" autocomplete="off" checked>
+                        <label style="font-size:20px; font-family: 'Quicksand', sans-serif; padding-top: 30%; padding-bottom: 30%; padding-right: 50%; padding-left: 50%;" class="btn btn-outline-primary" for="success-outlined10">1</label>
+                        </div>
+            
+            
+                        <div class="col"  style="padding:15%; padding-left:5%; padding-right: 18%;" >
+                        <input type="radio" value=0 class="btn-check" name="10" id="danger-outlined10" autocomplete="off">
+                        <label style="font-size:20px; font-family: 'Quicksand', sans-serif; padding-top: 30%; padding-bottom: 30%; padding-right: 50%; padding-left: 50%;" class="btn btn-outline-secondary" for="danger-outlined10">0</label>
+                        </div>
+                    
+        
+                    </div>
+                    </div>
+                    <div class="col">
+                    <div class="row" style=" border-style:solid ;border-width: 20%; border-color: rgb(123, 198, 223);">
+
+                        
+                        <div class="col" style="padding:15%; padding-left:5%; padding-right: 5%;">
+                        <input type="radio" value=1 class="btn-check" name="12" id="success-outlined12" autocomplete="off" checked>
+                        <label style="font-size:20px; font-family: 'Quicksand', sans-serif; padding-top: 30%; padding-bottom: 30%; padding-right: 50%; padding-left: 50%;" class="btn btn-outline-primary" for="success-outlined12">1</label>
+                        </div>
+            
+            
+                        <div class="col"  style="padding:15%; padding-left:5%; padding-right: 18%;" >
+                        <input type="radio" value=0 class="btn-check" name="12" id="danger-outlined12" autocomplete="off">
+                        <label style="font-size:20px; font-family: 'Quicksand', sans-serif; padding-top: 30%; padding-bottom: 30%; padding-right: 50%; padding-left: 50%;" class="btn btn-outline-secondary" for="danger-outlined12">0</label>
+                        </div>
+                    
+        
+                    </div>
+                    </div>
+                    <div class="col">
+                    <div class="row" style=" border-style:solid ;border-width: 20%; border-color: rgb(123, 198, 223);">
+
+                        
+                        <div class="col" style="padding:15%; padding-left:5%; padding-right: 5%;">
+                        <input type="radio" value=1 class="btn-check" name="11" id="success-outlined11" autocomplete="off" checked>
+                        <label style="font-size:20px; font-family: 'Quicksand', sans-serif; padding-top: 30%; padding-bottom: 30%; padding-right: 50%; padding-left: 50%;" class="btn btn-outline-primary" for="success-outlined11">1</label>
+                        </div>
+            
+            
+                        <div class="col"  style="padding:15%; padding-left:5%; padding-right: 18%;" >
+                        <input type="radio" value=0 class="btn-check" name="11" id="danger-outlined11" autocomplete="off">
+                        <label style="font-size:20px; font-family: 'Quicksand', sans-serif; padding-top: 30%; padding-bottom: 30%; padding-right: 50%; padding-left: 50%;" class="btn btn-outline-secondary" for="danger-outlined11">0</label>
+                        </div>
+                    
+        
+                    </div>
+                    </div>
+                </div>
+                <div class="row">  <!-- SUBMIT button -->
+                    <div class="col" style="border-bottom-left-radius:15px; border-bottom-right-radius:15px; padding:3%; background-color: #7BC6DF;">
+                    <div class="d-grid gap-2">
+                        <form action="/" method="POST">
+                        <button class="btn btn-success" style="border-style: solid; border-color: #333; border-width:2px; ";type="submit"><b>SUBMIT</b></button>
+                        
+                    </div>
+                    </div>
+                </div>
+
+                
+            
+        </div>
+        
+        <div class="col-md-4" style="margin-top: 1%;"> <!--Accordion-->
+          <div class="accordion-item" style="padding-left:5%; font-family: 'Edu NSW ACT Foundation', cursive;  font-size: 200%; background-color:#7BC6DF ; color: #333; border-top-left-radius: 15px; border-top-right-radius: 15px; ">
+            Need Help?
+
+          </div>
+
+          <div class="accordion" id="accordionExample" >
+            
+            <div class="accordion-item" style="background-color:#bcd3db; border-radius: 0%;">
+              <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" style="background-color:#D2F4F1;">
+                  Easy Graphical Input Method  
+                </button>
+              </h2>
+              <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <strong>How to use it?</strong>
+                  Enter the required Karnaugh Map By Toggling the Buttons between 1s and 0s. You can also choose the required variables for your answer on the left side panel. Set the Karnaugh Map and press "SUBMIT" and the answer for the K Map will be shown at the bottom of the screen. Press "Try Again" to reset the KMap and enter another Kmap.  
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item" style="background-color:#bcd3db;">
+              <h2 class="accordion-header" id="headingTwo" >
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" style="background-color:#D2F4F1;">
+                  Standard Input System Used! 
+                </button>
+              </h2>
+              <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <strong>Use a normal Kmap for reference. </strong>
+                  The left side represents the first 2 variables - (A and B by default) and each row represents-
+                  A'B'   A'B   AB   AB'
+                  The top side represents the other 2 variables -(C and D by default) and each column represents- 
+                  C'D'   C'D   CD   CD'
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item" style="background-color:#bcd3db;">
+              <h2 class="accordion-header" id="headingThree">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree" style="background-color:#D2F4F1;">
+                  How Does it Work?
+                </button>
+              </h2>
+              <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <strong> Click the Top Right Button </strong>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+
+  </form>
+
+  <div class="container">  <!--Jinja2-->
+      <div class="card text-center">
+        <div class="card-header">
+          Your Required Answer is...
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">{{tasks}}</h5>
+          <p class="card-text">| The Answer Will Appear Above |</p>
+          <a href="." class="btn btn-success">Try Again!</a>
+        </div>
+        <div class="card-footer text-muted">
+          Powered By NITC First Sem ECE Courses
+        </div>
+      </div>  
+  </div>
+  {% endblock body  %}
+
