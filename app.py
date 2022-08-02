@@ -19,7 +19,7 @@ def calling_python_Kmap_code(a,b):
 
 
 
-app=Flask('__name__',template_folder=r"C:\Users\AltoTenor\OneDrive\Documents\Python\FlaskKmapChanges\KMAP-Heroku\Kmapenv\templates",static_folder=r"C:\Users\AltoTenor\OneDrive\Documents\Python\FlaskKmapChanges\KMAP-Heroku\Kmapenv\static")
+app=Flask('__name__')
 
 @app.route('/favicon.ico')
 def favicon():
